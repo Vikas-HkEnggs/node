@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,29 +14,29 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/api', require('./routes/api'));
 
 // Basic route
-app.get('/', (req, res) => {
-  res.json({ 
-    message: 'Welcome to Node.js API!',
-    version: '1.0.0',
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to Node.js API!",
+    version: "1.0.0",
     endpoints: {
-      users: '/api/users',
-      health: '/api/health'
-    }
+      users: "/api/users",
+      health: "/api/health",
+    },
   });
 });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ 
-    error: 'Something went wrong!',
-    message: err.message 
+  res.status(500).json({
+    error: "Something went wrong!",
+    message: err.message,
   });
 });
 
 // 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+app.use("*", (req, res) => {
+  res.status(404).json({ error: "Route not found" });
 });
 
 // Start server
