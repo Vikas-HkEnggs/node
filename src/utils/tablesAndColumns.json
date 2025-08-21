@@ -1,0 +1,124 @@
+[
+  {
+    "tableName": "Orders",
+    "columns": [
+      "order_id",
+      "companyName",
+      "itemName",
+      "customerEmail",
+      "gstNumber",
+      "address",
+      "quantity",
+      "type",
+      "availableQuantity",
+      "generatePI",
+      "status",
+      "createdAt",
+      "actions"
+    ]
+  },
+  {
+    "tableName": "Inventory",
+    "columns": [
+      "id",
+      "skuCode",
+      "itemName",
+      "typeFormatted",
+      "category",
+      "unit",
+      "maxLevel",
+      "availablePercentage",
+      "closingStock",
+      "location",
+      "closingStockDateTime",
+      "averageDailyConsumption",
+      "leadTime",
+      "safetyFactor",
+      "moq",
+      "materialInTransit",
+      "updatedBy",
+      "createdBy",
+      "actions",
+      "viewHistory"
+    ]
+  },
+  {
+    "tableName": "Employees",
+    "columns": [
+      "id",
+      "name",
+      "email",
+      "phone",
+      "designation",
+      "department",
+      "status",
+      "update",
+      "columnsPermission"
+    ]
+  },
+  {
+    "tableName": "Indent",
+    "columns": [
+      "id",
+      "creator",
+      "createdAt",
+      "status",
+      "viewIndent",
+      "editIndent",
+      "action"
+    ]
+  },
+  {
+    "tableName": "PO",
+    "columns": [
+      "poId",
+      "poNumber",
+      "vendorName",
+      "vendorAddress",
+      "creator",
+      "createdAt",
+      "status",
+      "viewPO",
+      "approvedAt",
+      "remarks",
+      "approveRejectAction",
+      "deleteAction"
+    ]
+  },
+  {
+    "tableName": "Order Update Requests",
+    "columns": [
+      "update_id",
+      "order_id",
+      "updatedField",
+      "updateDescription",
+      "requestedByEmployee",
+      "status",
+      "adminRemarks",
+      "action",
+      "updateHistories"
+    ]
+  },
+  {
+    "tableName": "Job Work",
+    "columns": [
+      "id",
+      "itemName",
+      "itemDescription",
+      "unit",
+      "gstNumber",
+      "totalQuantity",
+      "commitmentDate",
+      "challanNumber",
+      "subChallanNumber",
+      "received",
+      "vendorName",
+      "vendorEmail",
+      "address",
+      "createdBy",
+      "status",
+      "isDeleted",
+      "createdAt"
+    ]
+  }
+]

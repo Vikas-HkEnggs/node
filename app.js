@@ -1,48 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
+import dotenv from 'dotenv';
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+logger.info(`Starting server in ${process.env.NODE_ENV} mode`);
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Load the appropriate .env file based on NODE_ENV
+const envFile = process.env.NODE_ENV === 'development' ? '.env.development' : '.env';
+dotenv.config({ path: envFile });
 
-// Routes
-// app.use('/api', require('./routes/api'));
+import app from './src/app.js';
+import logger from './config/logger.js';
 
-// Basic route
-app.get("/", (req, res) => {
-  res.json({
-    message: "Welcome to Node.js API!",
-    version: "1.0.0",
-    endpoints: {
-      users: "/api/users",
-      health: "/api/health",
-    },
-  });
-});
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    error: "Something went wrong!",
-    message: err.message,
-  });
-});
-
-// 404 handler
-app.use("*", (req, res) => {
-  res.status(404).json({ error: "Route not found" });
-});
-
-// Start server
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Visit: http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT} in ${process.env.NODE_ENV || 'production'} mode🌍🌍✨✨`);
 });
-
-module.exports = app;

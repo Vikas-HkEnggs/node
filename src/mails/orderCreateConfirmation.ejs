@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Punch Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    h1{
+      /* font-size: 40px; */
+      color:#0e3758 ;
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+    .order-details {
+      margin: 20px 0;
+      text-align: left;
+    }
+    .order-item {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .order-item p {
+      margin: 5px 0;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      background: #eeeeee;
+      padding: 10px;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none; 
+    }
+    .footer div {
+      font-size: 20px;
+      color: #c92b8f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>H K Consultants & Engineers Private Limited</h1>
+    <h2>Order Punch Confirmation</h2>
+    <p>
+      A new order created for the Item <span class="highlight"><%= order.productName %></span>:
+    </p>
+
+    <div class="order-details">
+      <div class="order-item">
+        <p><strong>Order ID:</strong> <span class="highlight"><%= order._id %></span></p>
+        <p><strong>Product Name:</strong> <span class="highlight"><%= order.productName %></span></p>
+        <p><strong>Product Code:</strong> <span class="highlight"><%= order.product_code %></span></p>
+        <p><strong>Customer Name:</strong> <span class="highlight"><%= order.companyName %></span></p>
+        <p><strong>Customer Email:</strong> <span class="highlight"><%= order.customerEmail %></span></p>
+        <p><strong>GST Number:</strong> <span class="highlight"><%= order.gstNumber %></span></p>
+        <p><strong>Address:</strong> <span class="highlight"><%= order.address %></span></p>
+        <p><strong>Quantity:</strong> <span class="highlight"><%= order.quantity %></span></p>
+        <p><strong>Order Date:</strong> <span class="highlight"><%= order.orderDate %></span></p>
+        <p><strong>Delivery Date:</strong> <span class="highlight"><%= order.deliveryDate %></span></p>
+      </div>
+    </div>
+
+   
+
+    <a href="https://admin-dashboard-frontend-643h9o30s.vercel.app/admin/allOrders" class="btn">Visit Our Platform</a>
+
+    <div class="footer">
+      <p>For any issues, contact us at <a href="mailto:support@hkenggs.com">support@hkenggs.com</a>.</p>
+      <p>Best regards,<br /><div>H K Consultants & Engineers Private Limited</div></p>
+    </div>
+  </div>
+</body>
+</html>
